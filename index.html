@@ -11,48 +11,57 @@
 <body>
     <h1>Voici mon formulaire d'inscription</h1>
     <form action="form.php" method="get">
-        <div>
-            <label for="prenom">Prénom</label><br>
-            <input type="text" name="prenom" id="prenom">
-        </div>
-        <div>
-            <label for="nomDeFamille">Nom De Famille</label><br>
-            <input type="text" name="nomDeFamille" id="nomDeFamille">
-        </div>
-        <div>
+        <fieldset>
+            <legend>Vos coordonnées</legend>
 
-            <label for="age">Age</label><br>
-            <input type="number" name="age" id="age" min="18" max="99">
-        </div>
+            <div>
+                <label for="prenom">Prénom</label><br>
+                <input type="text" name="prenom" id="prenom" autofocus required>
+            </div>
+            <div>
+                <label for="nomDeFamille">Nom De Famille</label><br>
+                <input type="text" name="nomDeFamille" id="nomDeFamille" required>
+            </div>
+            <div>
+
+                <label for="age">Age</label><br>
+                <input type="number" name="age" id="age" min="18" max="99" required>
+            </div>
+            <div>
+                <label for="adresseMail">Adresse Mail</label><br>
+                <input type="email" name="email" id="adresseMail" pattern="regex" required>
+            </div>
+        
         <div>
             <label for="sexe">Sexe</label><br>
-            <select name="sexe" id="sexe">
+            <select name="sexe" id="sexe" >
                 <option value="masculin">Homme</option>
                 <option value="féminin">Femme</option>
             </select>
         </div>
-        <div>
-            <label for="adresseMail">Adresse Mail</label><br>
-            <input type="email" name="email" id="adresseMail" pattern="regex">
-        </div>
-        <div>
+    </fieldset>
+        <fieldset>
+            <legend>Votre adresse</legend>
+            <div>
 
-            <label for="adressePostale">Adresse postale</label><br>
-            <input type="text" name="adressePostale" id="adressePostale"><br>
-        </div>
-        <div>
-            <label for="codePostale">Code postale</label><br>
-            <input type="text" pattern="[0-9]{5}">
-        </div>
-        <div>
-            <label for="ville">Ville</label><br>
-            <input type="text" name="ville" id="ville">
+                <label for="adressePostale">Adresse postale</label><br>
+                <input type="text" name="adressePostale" id="adressePostale" required><br>
+            </div>
+            <div>
+                <label for="codePostale">Code postale</label><br>
+                <input type="text" pattern="[0-9]{5}" id="codePostale" required>
+            </div>
+            <div>
+                <label for="ville">Ville</label><br>
+                <input type="text" name="ville" id="ville" required>
 
-        </div>
+            </div>
+        </fieldset>
         <div>
             <label for="metierExerce">Métier exercé</label><br>
             <input type="text" name="metierExerce" id="metierExerce" list="metiersDisponibles">
             <datalist id="metiersDisponibles">
+                <option value="">(à renseigner)</option>
                 <option>Professeur</option>
                 <option>Dentist</option>
                 <option>Chirurgien</option>
@@ -64,8 +73,9 @@
         </div>
         <div>
             <label for="nationalite">Nationalité</label><br>
-            <input type="text" name="nationalite" id="nationalite" list="nationalitesValables">
+            <input type="text" name="nationalite" id="nationalite" list="nationalitesValables" required>
             <datalist id="nationalitesValables">
+                <option value="">(à renseigner)</option>
                 <option>Français</option>
                 <option>Portugais</option>
                 <option>Libanais</option>
@@ -77,14 +87,13 @@
         </div>
         <div>
             <label for="dateDeNaissance">Date de naissance</label><br>
-            <input type="date" id="dateDeNaissance" name="dateDeNaissance"
-            value="2005-01-01"
-            min="2005-01-01" >
+            <input type="date" id="dateDeNaissance" name="dateDeNaissance" value="2005-01-01" min="2005-01-01" required>
         </div>
         <div>
             <label for="paysDeNaissance">Pays de naissance</label><br>
             <input type="text" name="paysDeNaissance" id="paysDeNaissance" list="paysDisponibles">
             <datalist id="paysDisponibles">
+                <option value="">(à renseigner)</option>
                 <option>France</option>
                 <option>Allemagne</option>
                 <option>Portugal</option>
@@ -93,7 +102,24 @@
                 <option>Maroc </option>
                 <option>Lybie</option>
             </datalist>
-         </div>
+        </div>
+        <div>
+            <label for="numeroDeSecuriteSocial">Numéro de sécurité sociale</label><br>
+            <input type="text" pattern="[0-9]{13}" id="numeroDeSecuriteSocial">
+        </div>
+        <div>
+            <label for="dateDeDelivranceDePasseport">Date de délivrance de passeport</label><br>
+            <input type="date" id="dateDeDelivranceDePasseport" name="dateDeDelivranceDePasseport" min="2019-01-01"
+                required>
+        </div>
+        <div>
+            <label for="dateDeValiditeDePasseport">Date de validité de passeport</label><br>
+            <input type="date" id="dateDeValiditeDePasseport" name="dateDeValiditeDePasseport" min="2019-01-01"
+                required>
+        </div><br>
+        
+        <input type="submit" value="Envoyer">
+
 
 
 
