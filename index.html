@@ -6,13 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="Style.CSS" rel="stylesheet">
 </head>
 
 <body>
     <h1>Voici mon formulaire d'inscription</h1>
     <form action="form.php" method="get">
         <fieldset>
-            <legend>Vos coordonnées</legend>
+            <legend><strong>Vos coordonnées</strong></legend>
 
             <div>
                 <label for="prenom">Prénom</label><br>
@@ -41,7 +42,7 @@
         </div>
     </fieldset>
         <fieldset>
-            <legend>Votre adresse</legend>
+            <legend><strong> Votre adresse </strong></legend>
             <div>
 
                 <label for="adressePostale">Adresse postale</label><br>
@@ -58,7 +59,7 @@
             </div>
         </fieldset>
         <div>
-            <label for="metierExerce">Métier exercé</label><br>
+            <label for="metierExerce"><strong>Métier exercé</strong></label><br>
             <input type="text" name="metierExerce" id="metierExerce" list="metiersDisponibles">
             <datalist id="metiersDisponibles">
                 <option value="">(à renseigner)</option>
@@ -72,7 +73,7 @@
             </datalist>
         </div>
         <div>
-            <label for="nationalite">Nationalité</label><br>
+            <label for="nationalite"><strong>Métier exercé</strong></label><br>
             <input type="text" name="nationalite" id="nationalite" list="nationalitesValables" required>
             <datalist id="nationalitesValables">
                 <option value="">(à renseigner)</option>
@@ -86,11 +87,11 @@
             </datalist>
         </div>
         <div>
-            <label for="dateDeNaissance">Date de naissance</label><br>
+            <label for="dateDeNaissance"><strong> Date de naissance</strong></label><br>
             <input type="date" id="dateDeNaissance" name="dateDeNaissance" value="2005-01-01" min="2005-01-01" required>
         </div>
         <div>
-            <label for="paysDeNaissance">Pays de naissance</label><br>
+            <label for="paysDeNaissance"><strong> Pays de naissance </strong></label><br>
             <input type="text" name="paysDeNaissance" id="paysDeNaissance" list="paysDisponibles">
             <datalist id="paysDisponibles">
                 <option value="">(à renseigner)</option>
@@ -104,20 +105,25 @@
             </datalist>
         </div>
         <div>
-            <label for="numeroDeSecuriteSocial">Numéro de sécurité sociale</label><br>
+            <label for="numeroDeSecuriteSocial"><strong> Numéro de sécurité sociale</strong></label><br>
             <input type="text" pattern="[0-9]{13}" id="numeroDeSecuriteSocial">
         </div>
         <div>
-            <label for="dateDeDelivranceDePasseport">Date de délivrance de passeport</label><br>
+            <label for="numeroDePasseport"><strong> Numéro de Passeport </strong></label><br>
+            <input type="text" pattern="[0-9]{2}[A-Z]{2}[0-9]{5}" id="numeroDePasseport">
+
+        </div>
+        <div>
+            <label for="dateDeDelivranceDePasseport"><strong> Date de délivrance de passeport</strong></label><br>
             <input type="date" id="dateDeDelivranceDePasseport" name="dateDeDelivranceDePasseport" min="2019-01-01"
                 required>
         </div>
         <div>
-            <label for="dateDeValiditeDePasseport">Date de validité de passeport</label><br>
+            <label for="dateDeValiditeDePasseport"><strong> Date de validité de passeport </strong></label><br>
             <input type="date" id="dateDeValiditeDePasseport" name="dateDeValiditeDePasseport" min="2019-01-01"
                 required>
         </div><br>
-        
+
         <input type="submit" value="Envoyer">
 
 
